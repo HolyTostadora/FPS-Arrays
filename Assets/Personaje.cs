@@ -17,4 +17,13 @@ public class Personaje : MonoBehaviour
     {
         
     }
+
+    void TomarAlimento (int valorAlimentario)
+    {
+        nivelHambre -= valorAlimentario;
+        if(nivelHambre <= 0)
+        {
+            nivelHambre = 0;
+        }
+    }
 }
