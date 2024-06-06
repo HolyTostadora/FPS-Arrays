@@ -5,7 +5,6 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
     public int nivelHambre;
-    public AlimentoScript alimento;
 
     void Start()
     {
@@ -25,5 +24,13 @@ public class Personaje : MonoBehaviour
         {
             nivelHambre = 0;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger");
+        AlimentoScript alimento;
+        alimento = other.GetComponent<AlimentoScript>();
+        TomarAlimento(alimento.valorAlimentario);
     }
 }
